@@ -26,6 +26,5 @@ ENV GATUS_CONFIG_PATH=/config/config.yaml \
     GATUS_LOG_LEVEL=INFO \
     PORT=8080
 
-USER gatus
 EXPOSE 8080
 ENTRYPOINT ["/gatus"]
