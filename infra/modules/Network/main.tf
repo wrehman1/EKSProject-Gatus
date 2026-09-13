@@ -3,29 +3,29 @@ module "vpc" {
   version               = "6.7.2"
 }
 
-name                    = var.name
-cidr                    = var.vpc_cidr
+  name                    = var.name
+  cidr                    = var.vpc_cidr
 
-availability_zones      = var.availability_zones
+  availability_zones      = var.availability_zones
 
-public_subnets          = var.public_subnets
+  public_subnets          = var.public_subnets
 
-private_subnets         = var.private_subnets
+  private_subnets         = var.private_subnets
 
-enable_nat_gateway      = true
-single_nat_gateway      = var.single_nat_gateway
+  enable_nat_gateway      = true
+  single_nat_gateway      = var.single_nat_gateway
 
-map_public_ip_on_launch = true
+  map_public_ip_on_launch = true
 
-public_subnets_tags     = {
+  public_subnets_tags     = {
    "kubernetes.io/role/elb" = "1"
 }
 
-private_subnets_tags    = {
+  private_subnets_tags    = {
     "kubernetes.io/role/internal-elb" = "1"
 }
 
-tags = {
+  tags = {
     "kubernetes.io/cluster/${var.cluster_name}" = "shared"
-
+  }
 }
