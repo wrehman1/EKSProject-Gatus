@@ -30,6 +30,6 @@ variable "cluster_name" {
 
 variable "single_nat_gateway" {
   description = "Whether to provision one shared NAT Gateway."
-  type = bool
-  default = true
+  type        = bool
+  default     = true
 }
