@@ -1,17 +1,21 @@
 output "vpc_id" {
-  value = module.network.vpc_id
+  description = "VPC ID"
+  value       = module.vpc.vpc_id
 }
 
 output "public_subnets_ids" {
-  value = module.network.public_subnet_ids
+  description = "Public subnet ID (load balancer)"
+  value       = module.vpc.public_subnet_ids
 }
 
 output "private_subnet_ids" {
-  value = module.network.private_subnets_ids
+  description = "Private subnet IDs (EKS workers)"
+  value       = module.vpc.private_subnet_ids
 }
 
 output "eks_cluster_name" {
-  value = module.eks.cluster_name
+  description = "EKS cluster name"
+  value       = module.eks.cluster_name
 }
 
 output "worker_iam_arn" {
