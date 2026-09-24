@@ -3,8 +3,8 @@ locals {
   cluster_name = "${var.project_name}-eks"
 }
 
-module "network" {
-  source = "./modules/Network"
+module "vpc" {
+  source = "./modules/vpc"
 
   name = "${local.name}-vpc"
 
@@ -34,11 +34,11 @@ module "eks" {
 
   kubernetes_version = var.kubernetes_version
 
-  vpc_id = module.network.vpc_id
+  vpc_id = module.vpc.vpc_id
 
-  private_subnet_ids = module.network.private_subnets_ids
+  private_subnet_ids = module.vpc.private_subnet_ids
 
-  worker_role_arn = module.worker_iam_arn
+  worker_role_arn = module.worker_iam.role_arn
 
   node_instance_types = var.node_instance_types
 
