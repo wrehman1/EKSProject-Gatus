@@ -1,22 +1,22 @@
 terraform {
-    required_version = ">= 1.10.0"
+  required_version = ">= 1.10.0"
 
-    required_providers {
-      aws = {
-        source = "hashicorp/aws"
-        version = "~> 6.62"
-      }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.62"
     }
+  }
 }
 
 provider "aws" {
-    region = var.aws_region
+  region = var.aws_region
 
-    default_tags {
-      tags = {
-        Project     = var.project_name
-        Environment = var.environment
-        ManagedBy   = "Terraform"
-      }
+  default_tags {
+    tags = {
+      Project     = var.project_name
+      Environment = var.environment
+      ManagedBy   = "Terraform"
     }
+  }
 }
