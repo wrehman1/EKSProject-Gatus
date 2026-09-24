@@ -25,7 +25,7 @@ variable "worker_role_arn" {
 
 variable "node_instance_types" {
   description = "EC2 instance types used by worker nodes."
-  type        = list(string) 
+  type        = list(string)
 }
 
 variable "node_min_size" {
